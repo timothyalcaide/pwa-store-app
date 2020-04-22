@@ -6,7 +6,18 @@ const routes: Routes = [
   {
     path: "",
     component: LayoutComponent,
-    children: [],
+    children: [
+      {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "/products",
+      },
+      {
+        path: "products",
+        loadChildren: () =>
+          import("./product/product.module").then((m) => m.ProductModule),
+      },
+    ],
   },
 ];
 
