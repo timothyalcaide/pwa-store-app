@@ -1,19 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-header',
+  selector: "app-header",
   template: `
-    <p>
-      header works!
-    </p>
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+      <a routerLink="/" class="navbar-brand">
+        <img [attr.src]="logo" [attr.alt]="title" width="30" height="30" />
+        {{ title }}
+      </a>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+          <ng-container *ngFor="let link of links">
+            <a
+              class="nav-item nav-link"
+              [routerLink]="link.url"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              {{ link.label }}
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </nav>
   `,
-  styles: []
+  styles: [],
 })
 export class HeaderComponent implements OnInit {
+  logo = "assets/logo.svg";
+  title = "Store";
+  links = [
+    {
+      label: "Products",
+      url: "/products",
+    },
+  ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

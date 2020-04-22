@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-footer',
+  selector: "app-footer",
   template: `
-    <p>
-      footer works!
-    </p>
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom">
+      <div class="navbar-text m-auto text-white">
+        Copyright &copy; {{ date }}
+      </div>
+    </nav>
   `,
-  styles: []
+  styles: [],
 })
 export class FooterComponent implements OnInit {
+  date: number;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.date = new Date().getFullYear();
   }
-
 }
