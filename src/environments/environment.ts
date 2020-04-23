@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "https://egghead-products-api.now.sh/api",
+  // Normalement mettre api de dev
+  // apiUrl: 'http://localhost:3000/api'
 };
 
 /*
