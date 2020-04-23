@@ -5,7 +5,7 @@ import { Component, OnInit } from "@angular/core";
   template: `
     <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
       <a routerLink="/" class="navbar-brand">
-        <img [attr.src]="logo" [attr.alt]="title" width="30" height="30" />
+        <img [src]="logo" [alt]="title" width="30" height="30" />
         {{ title }}
       </a>
       <div class="collapse navbar-collapse">

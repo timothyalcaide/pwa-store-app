@@ -5,7 +5,7 @@ import { ProductService } from "../../services/product.service";
 
 @Component({
   selector: "app-product-detail",
-  template: ` {{ product | json }} `,
+  template: `<app-product [product]="product" [details]="true"></app-product> `,
   styles: [],
 })
 export class ProductDetailComponent implements OnInit {

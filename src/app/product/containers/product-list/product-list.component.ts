@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 
 @Component({
   selector: "app-product-list",
-  template: ` {{ products$ | async | json }} `,
+  template: ` <app-products [products]="products$ | async"></app-products> `,
   styles: [],
 })
 export class ProductListComponent implements OnInit {
