@@ -15,7 +15,12 @@ import { Component, OnInit, Input } from "@angular/core";
           </ng-template>
         </h4>
       </div>
-      <img [src]="product.image" [alt]="product.name" class="card-img" />
+      <img
+        appLazyLoad
+        [src]="product.image"
+        [alt]="product.name"
+        class="card-img"
+      />
       <div class="card-body" *ngIf="details">
         <p class="my-2">{{ product.description }}</p>
       </div>
